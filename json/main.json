@@ -1,0 +1,17 @@
+{
+    "main":{
+        "serverURL":"https://collegeff-production.up.railway.app/",
+        "gameCooldownSeconds":1800,
+        "priceWheelStart":5
+    },
+	"defaultData":{
+        "coins":0,
+        "diamond":0,
+        "language":"",
+        "music":1,
+        "sound":1,
+        "tutorialCompleted":0,
+        "gameStartTime":0
+        
+    }
+}

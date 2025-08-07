@@ -1,0 +1,18 @@
+{   
+    "charactersName":{
+        "left":"Ben",
+        "right":"Emily"
+    },
+	"chat":[
+        {
+             "contentType":"text",
+             "position":"left",
+             "key":"text1"
+        },
+        {
+             "contentType":"image",
+             "position":"right",
+             "key":"image1"
+        }
+    ]
+}
