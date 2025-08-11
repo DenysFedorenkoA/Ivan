@@ -1,0 +1,75 @@
+{
+    "girls":[
+        {
+            "id":"girl0",
+            "nameKey":"name_girl0",
+            "age":23,
+            "descriptionKey":"description_girl0",
+            "storyList":[
+                {
+                    "name":"girl0_1",
+                    "image":""
+                },
+                {
+                    "name":"girl0_2",
+                    "image":""
+                },
+                {
+                    "name":"girl0_3",
+                    "image":""
+                },
+                {
+                    "name":"girl0_4",
+                    "image":""
+                },
+                {
+                    "name":"girl0_5",
+                    "image":""
+                },
+                {
+                    "name":"girl0_6",
+                    "image":""
+                },
+                {
+                    "name":"girl0_7",
+                    "image":""
+                },
+                {
+                    "name":"girl0_8",
+                    "image":""
+                },
+                {
+                    "name":"girl0_9",
+                    "image":""
+                },
+                {
+                    "name":"girl0_10",
+                    "image":""
+                },
+                {
+                    "name":"girl0_11",
+                    "image":""
+                },
+                {
+                    "name":"girl0_12",
+                    "image":""
+                }
+               
+               
+            
+                
+            ]
+        },
+        {
+            "id":"girl1",
+            "nameKey":"name_girl1",
+            "age":76,
+            "descriptionKey":"description_girl1",
+            "storyList":[
+                "girl1_1",
+                "girl1_2"
+            ]
+        }
+        
+    ]
+}

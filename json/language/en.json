@@ -12,5 +12,13 @@
     "gallery":"Gallery",
     "girls":"Girls",
     "wheel":"Wheel",
-    "startGame":"Start game"
+    "startGame":"Start game",
+    "age":"Age",
+    "girlsData":{        
+        "name_girl0":"Eliss",
+        "description_girl0":"Like gump",
+        "name_girl1":"Lisa",
+        "description_girl1":"Like sleep"
+
+    }
 }

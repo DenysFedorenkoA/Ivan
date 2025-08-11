@@ -1,0 +1,30 @@
+{   
+    "charactersName":{
+        "left":"Ben123",
+        "right":"Emily123"
+    },
+	"chat":[
+        {
+             "contentType":"text",
+             "position":"left",
+             "key":"key1",
+             "audio":"track1"
+        },
+        {
+             "contentType":"image",
+             "position":"right",
+             "key":"image1"
+        },
+                {
+             "contentType":"text",
+             "position":"right",
+             "key":"key2",
+             "audio":"track2"
+        },
+        {
+             "contentType":"image",
+             "position":"right",
+             "key":"image2"
+        }
+    ]
+}

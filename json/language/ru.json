@@ -12,5 +12,12 @@
     "gallery":"Галерея",
     "girls":"Девушки",
     "wheel":"Колесо удачи",
-    "startGame":"Начать игру"
+    "startGame":"Начать игру",
+    "age":"Возраст",
+    "girlsData":{
+        "name_girl0":"Жанна",
+        "description_girl0":"Любит прыгать\nЛюбит смотреть в потолок",
+        "name_girl1":"Алиса",
+        "description_girl1":"Любит бегать\nЛюбит петь песни"
+    }
 }
