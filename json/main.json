@@ -11,7 +11,9 @@
         "music":1,
         "sound":1,
         "tutorialCompleted":0,
-        "gameStartTime":0
-        
+        "gameStartTime":0,
+        "boost1":5,
+        "boost2":5,
+        "boost3":5
     }
 }
