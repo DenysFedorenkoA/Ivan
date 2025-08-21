@@ -1569,7 +1569,7 @@ self.C3_ExpressionFuncs = [
 		() => "load",
 		() => "version",
 		() => "loadingProgress",
-		() => 4,
+		() => 8,
 		() => "tutorialCompleted",
 		() => "loadMainDataCompleted",
 		() => "LOAD_MainData",
@@ -1579,6 +1579,14 @@ self.C3_ExpressionFuncs = [
 		() => "LOAD_Language",
 		() => "loadStoryListCompleted",
 		() => "LOAD_StoryList",
+		() => "loadHomeCompleted",
+		() => "LOAD_HOME",
+		() => "loadGirlDataCompleted",
+		() => "LOAD_GIRL_DATA",
+		() => "loadWheelRewardComplered",
+		() => "LOAD_loadWheelRewardComplered",
+		() => "loadShopDataCompleted",
+		() => "LOAD_loadShopDataCompleted",
 		() => "loadingBar",
 		() => 615,
 		() => "100%",
@@ -1586,7 +1594,7 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
 			const v2 = p._GetNode(2).GetVar();
-			return () => ((((n0.ExpObject()) < (615) ? 1 : 0)) ? (C3.lerp(n1.ExpObject(), ((615 / 4) * v2.GetValue()), 0.08)) : (615));
+			return () => ((((n0.ExpObject()) < (615) ? 1 : 0)) ? (C3.lerp(n1.ExpObject(), ((615 / 8) * v2.GetValue()), 0.08)) : (615));
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -1605,6 +1613,8 @@ self.C3_ExpressionFuncs = [
 			const n1 = p._GetNode(1);
 			return () => n0.ExpObject(n1.ExpObject());
 		},
+		() => "loadWheelReward",
+		() => "wheelReward",
 		() => "loadUserServerData",
 		() => "skipTimer",
 		p => {
@@ -1634,13 +1644,383 @@ self.C3_ExpressionFuncs = [
 			const n3 = p._GetNode(3);
 			return () => f0(0, 0, 1, subtract(n1.ExpObject("main.gameCooldownSeconds"), subtract(v2.GetValue(), n3.ExpObject("gameStartTime"))));
 		},
-		() => "loadWheelReward",
-		() => "wheelReward",
-		() => "loadWheelRewardComplered",
+		() => "home",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject("home");
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => n0.ExpObject(and("home.", v1.GetValue()));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => and("girlsEnableList.", n0.ExpObject());
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => n0.ExpObject(and(n1.ExpObject(), ".iconNumber"));
+		},
+		() => "girlsMenu",
+		() => "switchGirlsMenuSection",
+		() => "girlMenu",
+		() => "selectGirlMenu",
+		() => "cursoreIsOver",
+		() => "all",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + ".score");
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => n0.ExpObject((v1.GetValue() + ".score"));
+		},
+		() => "selectGirls",
+		() => "createPopUpAll",
+		() => "girls",
+		() => "displayGirlDesctiption",
+		() => "girlName",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const n1 = p._GetNode(1);
+			const v2 = p._GetNode(2).GetVar();
+			return () => f0(and("girlsData.name.", n1.ExpObject((v2.GetValue() + ".nameKey"))));
+		},
+		() => "girlAge",
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => n0.ExpObject((v1.GetValue() + ".age"));
+		},
+		() => "girlDescription",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const n1 = p._GetNode(1);
+			const v2 = p._GetNode(2).GetVar();
+			return () => f0(and("girlsData.description.", n1.ExpObject((v2.GetValue() + ".descriptionKey"))));
+		},
+		() => "openStoryCount",
+		() => "girlStoryProgress",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const n1 = p._GetNode(1);
+			const v2 = p._GetNode(2).GetVar();
+			const f3 = p._GetNode(3).GetBoundMethod();
+			const n4 = p._GetNode(4);
+			const v5 = p._GetNode(5).GetVar();
+			const n6 = p._GetNode(6);
+			const v7 = p._GetNode(7).GetVar();
+			const n8 = p._GetNode(8);
+			const v9 = p._GetNode(9).GetVar();
+			const n10 = p._GetNode(10);
+			const v11 = p._GetNode(11).GetVar();
+			const n12 = p._GetNode(12);
+			const v13 = p._GetNode(13).GetVar();
+			return () => ((((f0()) > (0) ? 1 : 0)) ? (and(and(and(and(n1.ExpObject((v2.GetValue() + ".score")), "(+"), f3()), ")/"), n4.ExpObject((and((v5.GetValue() + "."), n6.ExpObject(v7.GetValue())) + ".score")))) : (and(and(n8.ExpObject((v9.GetValue() + ".score")), "/"), n10.ExpObject((and((v11.GetValue() + "."), n12.ExpObject(v13.GetValue())) + ".score")))));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => n0.ExpObject((v1.GetValue() + ".iconNumber"));
+		},
+		() => "purchaseGirl",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (v0.GetValue() + ".gift");
+		},
+		() => "switchCharacters",
+		() => "leftGirl",
+		() => "rightGirl",
+		() => "storyList",
+		() => "createStoryList",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 30);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => (n0.ExpObject() + v1.GetValue());
+		},
+		() => 110,
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => n0.ExpObject((n1.ExpObject() + ".name"));
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (v0.GetValue() * (100 + 10));
+		},
+		() => "loadStory",
+		() => "chat",
+		() => "chooseStory",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			const v1 = p._GetNode(1).GetVar();
+			const v2 = p._GetNode(2).GetVar();
+			const v3 = p._GetNode(3).GetVar();
+			return () => (and((and((and((and("json/story/girl", v0.GetValue()) + "/story"), v1.GetValue()) + "/girl"), v2.GetValue()) + "_story"), v3.GetValue()) + ".json");
+		},
+		() => "loadStoryLanguage",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			const v1 = p._GetNode(1).GetVar();
+			const v2 = p._GetNode(2).GetVar();
+			const v3 = p._GetNode(3).GetVar();
+			const v4 = p._GetNode(4).GetVar();
+			return () => (((and((and((and((and("json/story/girl", v0.GetValue()) + "/story"), v1.GetValue()) + "/girl"), v2.GetValue()) + "_story"), v3.GetValue()) + "_") + v4.GetValue()) + ".json");
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			const v1 = p._GetNode(1).GetVar();
+			return () => and((and("girl", v0.GetValue()) + "story"), v1.GetValue());
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			const v2 = p._GetNode(2).GetVar();
+			return () => n0.ExpObject(and((and("girl", v1.GetValue()) + "story"), v2.GetValue()));
+		},
+		() => "loadStoryData",
+		() => "createMessage",
+		() => "createTextMessage",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (and("chat.", v0.GetValue()) + ".contentType");
+		},
+		() => "text",
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => and("message_", n0.ExpObject((and("chat.", v1.GetValue()) + ".position")));
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const n1 = p._GetNode(1);
+			const v2 = p._GetNode(2).GetVar();
+			const n3 = p._GetNode(3);
+			return () => f0(n1.ExpObject((and("chat.", v2.GetValue()) + ".position")), (n3.ExpObject() + 200));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => ((n0.ExpObject() + 20) + v1.GetValue());
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			const v2 = p._GetNode(2).GetVar();
+			return () => n0.ExpObject(n1.ExpObject((and("chat.", v2.GetValue()) + ".key")));
+		},
+		() => 0.3,
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 20);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 50);
+		},
+		() => "messageGirl",
+		() => "messageMen",
+		() => "createImageMessage",
+		() => "image",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => and("girl", v0.GetValue());
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const n1 = p._GetNode(1);
+			const v2 = p._GetNode(2).GetVar();
+			const n3 = p._GetNode(3);
+			return () => f0(n1.ExpObject((and("chat.", v2.GetValue()) + ".position")), n3.ExpObject());
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			const n2 = p._GetNode(2);
+			return () => (((n0.ExpObject() + 20) + v1.GetValue()) + (n2.ExpObject() / 2));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => (n0.ExpObject() + (v1.GetValue() * 3));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => n0.ExpObject((and("chat.", v1.GetValue()) + ".key"));
+		},
+		() => "playSound",
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => n0.ExpObject((and("chat.", v1.GetValue()) + ".audio"));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (-n0.ExpObject());
+		},
+		() => "setMessagePosition",
+		() => "left",
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => ((n0.ExpObject() + (v1.GetValue() / 2)) + 25);
+		},
+		() => "right",
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => ((n0.ExpObject() - (v1.GetValue() / 2)) - 25);
+		},
+		() => "messageImageFullscreen",
+		() => "messageFullscreenImage",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const v1 = p._GetNode(1).GetVar();
+			return () => f0(v1.GetValue());
+		},
+		() => 20,
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const v1 = p._GetNode(1).GetVar();
+			const v2 = p._GetNode(2).GetVar();
+			return () => f0(v1.GetValue(), ("_" + v2.GetValue()), "");
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => ("sound " + v0.GetValue());
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => ((n0.ExpInstVar() + "_") + v1.GetValue());
+		},
+		() => "buttonGiftAll",
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			const n2 = p._GetNode(2);
+			return () => multiply(n0.ExpObject(), n1.ExpObject(n2.ExpObject()));
+		},
+		() => "giftAll",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (v0.GetValue() + ".score");
+		},
+		() => "data.data.girlsSaveData",
+		() => "chooseShopPage",
+		() => "shopMenu",
+		() => "s_diamond",
+		() => "s_currency",
+		() => "s_main",
+		() => "s_premium",
+		() => "createShopItems",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => ("s_" + n0.ExpObject());
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => ((n0.ExpObject() + v1.GetValue()) + 40);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => n0.ExpObject((n1.ExpObject() + ".quantityInColumn"));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => n0.ExpObject((n1.ExpObject() + ".item"));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + ".item");
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => n0.ExpObject((n1.ExpObject() + ".type"));
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			const n1 = p._GetNode(1);
+			const v2 = p._GetNode(2).GetVar();
+			return () => ((v0.GetValue() + 40) + ((n1.ExpObject() + 40) * v2.GetValue()));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			const v2 = p._GetNode(2).GetVar();
+			return () => ((n0.ExpObject() + 40) + ((n1.ExpObject() + 40) * v2.GetValue()));
+		},
+		() => "price",
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			const n2 = p._GetNode(2);
+			const n3 = p._GetNode(3);
+			return () => and(and(and(n0.ExpObject((n1.ExpObject() + ".price")), " [icon="), n2.ExpObject((n3.ExpObject() + ".currency"))), "]");
+		},
+		() => "count",
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => n0.ExpObject((n1.ExpObject() + ".count"));
+		},
+		() => "text1",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const n1 = p._GetNode(1);
+			const n2 = p._GetNode(2);
+			return () => f0(and("shopItems.", n1.ExpObject((n2.ExpObject() + ".text1"))));
+		},
+		() => "text2",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const n1 = p._GetNode(1);
+			const n2 = p._GetNode(2);
+			return () => f0(and("shopItems.", n1.ExpObject((n2.ExpObject() + ".text2"))));
+		},
+		() => "text3",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const n1 = p._GetNode(1);
+			const n2 = p._GetNode(2);
+			return () => f0(and("shopItems.", n1.ExpObject((n2.ExpObject() + ".text3"))));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => n0.ExpObject((n1.ExpObject() + ".image"));
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			const v1 = p._GetNode(1).GetVar();
+			const v2 = p._GetNode(2).GetVar();
+			const v3 = p._GetNode(3).GetVar();
+			return () => (((((v0.GetValue() % v1.GetValue())) === (0) ? 1 : 0)) ? (v2.GetValue()) : ((v3.GetValue() + 1)));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			const v2 = p._GetNode(2).GetVar();
+			const v3 = p._GetNode(3).GetVar();
+			const v4 = p._GetNode(4).GetVar();
+			return () => (((Math.ceil((n0.ExpObject((n1.ExpObject() + ".item")) / v2.GetValue())) * v3.GetValue()) + (40 * v4.GetValue())) + 40);
+		},
 		() => "createWheel",
 		() => "Game",
 		() => "i",
-		() => 7,
+		() => -2,
 		p => {
 			const n0 = p._GetNode(0);
 			const v1 = p._GetNode(1).GetVar();
@@ -1656,15 +2036,18 @@ self.C3_ExpressionFuncs = [
 		() => "wheelIcons",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => f0("i");
+			return () => (f0("i") + 2);
 		},
 		() => "disableRouletGroup",
 		() => "createRandomRoulette",
 		() => "roulette",
-		() => 8,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => (Math.pow(f0("i"), 5) + 1);
+			return () => f0("i");
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => (Math.pow(f0("i"), 2) + 1);
 		},
 		() => "rouletteRotate",
 		() => "rotate",
@@ -1679,7 +2062,7 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const n1 = p._GetNode(1);
-			return () => f0(((((n1.ExpObject() / (360 / 8)) + 8) - 1) % 8));
+			return () => f0((((((n1.ExpObject() / (360 / 8)) + 8) - 1) + ((360 / 8) / 2)) % 8));
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -1690,35 +2073,71 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			const f1 = p._GetNode(1).GetBoundMethod();
-			return () => ((((360 / 8) * v0.GetValue()) % 360) + f1(3, ((360 / 8) - 3)));
+			return () => (((((360 / 8) * v0.GetValue()) % 360) + f1(3, ((360 / 8) - 3))) + ((360 / 8) / 2));
 		},
 		() => 0.5,
 		() => "rouletteReward",
 		p => {
-			const n0 = p._GetNode(0);
-			const v1 = p._GetNode(1).GetVar();
-			return () => n0.ExpObject(and(v1.GetValue(), ".type"));
+			const v0 = p._GetNode(0).GetVar();
+			const n1 = p._GetNode(1);
+			const v2 = p._GetNode(2).GetVar();
+			return () => and((v0.GetValue() + ".gift."), n1.ExpObject(and(v2.GetValue(), ".type")));
 		},
 		p => {
 			const n0 = p._GetNode(0);
 			const v1 = p._GetNode(1).GetVar();
-			return () => n0.ExpObject(and(v1.GetValue(), ".count"));
+			const n2 = p._GetNode(2);
+			const v3 = p._GetNode(3).GetVar();
+			const n4 = p._GetNode(4);
+			const v5 = p._GetNode(5).GetVar();
+			return () => add(n0.ExpObject(and((v1.GetValue() + ".gift."), n2.ExpObject(and(v3.GetValue(), ".type")))), n4.ExpObject(and(v5.GetValue(), ".count")));
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => f0("roulette");
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			const v1 = p._GetNode(1).GetVar();
-			return () => and("data.data.", n0.ExpObject(and(v1.GetValue(), ".type")));
+			const f1 = p._GetNode(1).GetBoundMethod();
+			const f2 = p._GetNode(2).GetBoundMethod();
+			const n3 = p._GetNode(3);
+			return () => n0.ExpObject((("girlsArray" + ".") + (f1(f2(0, n3.ExpObject("girlsArray")))).toString()));
+		},
+		() => "girlsSaveData",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject("girlsSaveData");
 		},
 		() => "data.data.diamond",
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject("diamond");
 		},
-		() => "rouletteStartWheel",
+		() => 100,
+		p => {
+			const n0 = p._GetNode(0);
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => ((n0.ExpObject() + 100) + (f1() * 100));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			const f2 = p._GetNode(2).GetBoundMethod();
+			return () => n0.ExpObject(and(n1.ExpObject(f2(), 0), ".iconNumber"));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => subtract(n0.ExpObject(f1(), 1), 1);
+		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => f0("roulette");
+			const n1 = p._GetNode(1);
+			const n2 = p._GetNode(2);
+			const f3 = p._GetNode(3).GetBoundMethod();
+			return () => f0(and("girlsData.name.", n1.ExpObject(and(n2.ExpObject(f3(), 0), ".nameKey"))));
 		},
+		() => "rouletteStartWheel",
 		() => "wheel",
 		() => "button",
 		() => "buttonAnimation",
@@ -1726,7 +2145,6 @@ self.C3_ExpressionFuncs = [
 		() => 0.8,
 		() => "buttonClose",
 		() => "close",
-		() => "all",
 		() => "buttonPopUp",
 		() => "popUp",
 		() => "visibleBack",
@@ -1754,6 +2172,7 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject("language");
 		},
+		() => 4,
 		() => "loadLanguage",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
@@ -1861,7 +2280,6 @@ self.C3_ExpressionFuncs = [
 			return () => and("popUp", (v0.GetValue() - 1));
 		},
 		() => "opacity",
-		() => 100,
 		() => 0.2,
 		p => {
 			const n0 = p._GetNode(0);
@@ -1878,6 +2296,11 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => subtract(subtract(multiply((100 - 7), subtract(1, n0.ExpObject("music"))), 100), 7);
 		},
+		() => "data.data.music",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject("music");
+		},
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => ("music " + v0.GetValue());
@@ -1891,14 +2314,20 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => subtract(multiply(100, n0.ExpObject("sound")), 100);
 		},
+		() => "data.data.sound",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject("sound");
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => subtract(1, n0.ExpObject(n1.ExpObject()));
+		},
 		p => {
 			const n0 = p._GetNode(0);
 			const v1 = p._GetNode(1).GetVar();
 			return () => subtract(subtract(multiply(100, subtract(1, n0.ExpObject("sound"))), 100), v1.GetValue());
-		},
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => ("sound " + v0.GetValue());
 		},
 		() => "add",
 		p => {
@@ -1983,188 +2412,6 @@ self.C3_ExpressionFuncs = [
 			const v6 = p._GetNode(6).GetVar();
 			return () => ((((v0.GetValue()) > (0) ? 1 : 0)) ? (((f1(f2(((v3.GetValue() / 60) % 60)), 2) + ":") + f4(f5((v6.GetValue() % 60)), 2))) : ("00:00"));
 		},
-		() => "girlsMenu",
-		() => "switchGirlsMenuSection",
-		() => "girlMenu",
-		() => "selectGirlMenu",
-		() => "selectGirls",
-		() => "createPopUpAll",
-		() => "girls",
-		() => "displayGirlDesctiption",
-		() => "girlName",
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			const v1 = p._GetNode(1).GetVar();
-			return () => f0(and("girlsData.name_girl", v1.GetValue()));
-		},
-		() => "girlAge",
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			const n1 = p._GetNode(1);
-			const v2 = p._GetNode(2).GetVar();
-			return () => and((f0("age") + ": "), n1.ExpObject((and("girls.", v2.GetValue()) + ".age")));
-		},
-		() => "girlDescription",
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			const v1 = p._GetNode(1).GetVar();
-			return () => f0(and("girlsData.description_girl", v1.GetValue()));
-		},
-		() => "switchCharacters",
-		() => "leftGirl",
-		() => "rightGirl",
-		() => "storyList",
-		() => "loadStoryList",
-		p => {
-			const n0 = p._GetNode(0);
-			return () => n0.ExpObject("girls");
-		},
-		() => "createStoryList",
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => (and("girls.", v0.GetValue()) + ".storyList");
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			return () => (n0.ExpObject() + 30);
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			const v1 = p._GetNode(1).GetVar();
-			return () => (n0.ExpObject() + v1.GetValue());
-		},
-		() => 110,
-		p => {
-			const n0 = p._GetNode(0);
-			const n1 = p._GetNode(1);
-			return () => n0.ExpObject((n1.ExpObject() + ".name"));
-		},
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => and("girl", v0.GetValue());
-		},
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			const v1 = p._GetNode(1).GetVar();
-			return () => and((and("girl", v0.GetValue()) + "story"), (v1.GetValue() - 1));
-		},
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => (v0.GetValue() * (100 + 10));
-		},
-		() => "loadStory",
-		() => "chat",
-		() => "chooseStory",
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			const v1 = p._GetNode(1).GetVar();
-			const v2 = p._GetNode(2).GetVar();
-			const v3 = p._GetNode(3).GetVar();
-			return () => (and((and((and((and("json/story/girl", v0.GetValue()) + "/story"), v1.GetValue()) + "/girl"), v2.GetValue()) + "_story"), v3.GetValue()) + ".json");
-		},
-		() => "loadStoryLanguage",
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			const v1 = p._GetNode(1).GetVar();
-			const v2 = p._GetNode(2).GetVar();
-			const v3 = p._GetNode(3).GetVar();
-			const v4 = p._GetNode(4).GetVar();
-			return () => (((and((and((and((and("json/story/girl", v0.GetValue()) + "/story"), v1.GetValue()) + "/girl"), v2.GetValue()) + "_story"), v3.GetValue()) + "_") + v4.GetValue()) + ".json");
-		},
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			const v1 = p._GetNode(1).GetVar();
-			return () => and((and("girl", v0.GetValue()) + "story"), v1.GetValue());
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			const v1 = p._GetNode(1).GetVar();
-			const v2 = p._GetNode(2).GetVar();
-			return () => n0.ExpObject(and((and("girl", v1.GetValue()) + "story"), v2.GetValue()));
-		},
-		() => "loadStoryData",
-		() => "createMessage",
-		() => "createTextMessage",
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => (and("chat.", v0.GetValue()) + ".contentType");
-		},
-		() => "text",
-		p => {
-			const n0 = p._GetNode(0);
-			const v1 = p._GetNode(1).GetVar();
-			return () => and("message_", n0.ExpObject((and("chat.", v1.GetValue()) + ".position")));
-		},
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			const n1 = p._GetNode(1);
-			const v2 = p._GetNode(2).GetVar();
-			const n3 = p._GetNode(3);
-			return () => f0(n1.ExpObject((and("chat.", v2.GetValue()) + ".position")), n3.ExpObject());
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			const v1 = p._GetNode(1).GetVar();
-			return () => ((n0.ExpObject() + 20) + v1.GetValue());
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			const n1 = p._GetNode(1);
-			const v2 = p._GetNode(2).GetVar();
-			return () => n0.ExpObject(n1.ExpObject((and("chat.", v2.GetValue()) + ".key")));
-		},
-		() => 0.3,
-		p => {
-			const n0 = p._GetNode(0);
-			return () => (n0.ExpObject() + 20);
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			return () => (n0.ExpObject() + 50);
-		},
-		() => "createImageMessage",
-		() => "image",
-		p => {
-			const n0 = p._GetNode(0);
-			const v1 = p._GetNode(1).GetVar();
-			const n2 = p._GetNode(2);
-			return () => (((n0.ExpObject() + 20) + v1.GetValue()) + (n2.ExpObject() / 2));
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			const v1 = p._GetNode(1).GetVar();
-			return () => (n0.ExpObject() + (v1.GetValue() * 3));
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			const v1 = p._GetNode(1).GetVar();
-			return () => n0.ExpObject((and("chat.", v1.GetValue()) + ".key"));
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			return () => (-n0.ExpObject());
-		},
-		() => "setMessagePosition",
-		() => "left",
-		p => {
-			const n0 = p._GetNode(0);
-			const v1 = p._GetNode(1).GetVar();
-			return () => ((n0.ExpObject() + (v1.GetValue() / 2)) + 25);
-		},
-		() => "right",
-		p => {
-			const n0 = p._GetNode(0);
-			const v1 = p._GetNode(1).GetVar();
-			return () => ((n0.ExpObject() - (v1.GetValue() / 2)) - 25);
-		},
-		() => "messageImageFullscreen",
-		() => "messageFullscreenImage",
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			const v1 = p._GetNode(1).GetVar();
-			return () => f0(v1.GetValue());
-		},
-		() => 20,
 		() => "scroll",
 		() => "setSrollSize",
 		() => "scrollController",
@@ -2192,7 +2439,25 @@ self.C3_ExpressionFuncs = [
 		() => -200,
 		() => 200,
 		() => "keyboard_Scroll",
-		() => -50
+		() => -50,
+		() => "loadGirlsData",
+		() => "loadHome",
+		() => "loadGirlData",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject("girls");
+		},
+		() => "girlsArray",
+		() => "enableGirl",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => ("girlsEnableList." + v0.GetValue());
+		},
+		() => "gift",
+		() => "giftScore",
+		() => "shop",
+		() => "loadShopData",
+		() => "loadShop"
 ];
 
 

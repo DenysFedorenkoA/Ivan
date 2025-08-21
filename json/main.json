@@ -6,14 +6,18 @@
     },
 	"defaultData":{
         "coins":0,
-        "diamond":20,
+        "diamond":123456,
         "language":"",
-        "music":1,
-        "sound":1,
+        "music":0,
+        "sound":0,
         "tutorialCompleted":0,
         "gameStartTime":0,
         "boost1":5,
         "boost2":5,
-        "boost3":5
+        "boost3":5,
+        "girl1":1,
+        "girl2":2,
+        "girl4":1,
+        "girl3":3
     }
 }

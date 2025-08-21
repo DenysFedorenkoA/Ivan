@@ -14,11 +14,39 @@
     "wheel":"Wheel",
     "startGame":"Start game",
     "age":"Age",
-    "girlsData":{        
-        "name_girl0":"Eliss",
-        "description_girl0":"Like gump",
-        "name_girl1":"Lisa",
-        "description_girl1":"Like sleep"
-
+    "main":"Main",
+    "crystal":"Crystal",
+    "diamond":"Diamond",
+    "currency":"Currency",
+    "premium":"Premium",
+    "shop":"Shop",
+    "girlsData":{
+        "name":{
+            "n0":"Jan",
+            "n1":"Ben",
+            "n2":"Men",
+            "n3":"Ken",
+            "n4":"Jass",
+            "n5":"Rich",
+            "n6":"Fix",
+            "n7":"Lil",
+            "n8":"Miss"
+        },
+        "description":{
+            "d0":"description1",
+            "d1":"description2",
+            "d2":"description3",
+            "d3":"description4",
+            "d4":"description5",
+            "d5":"description6",
+            "d6":"description7",
+            "d7":"description8",
+            "d8":"description9"
+        }
+    },
+    "shopItems":{
+        "text1":"Translation of text 1",
+        "text2":"Translation of text 2",
+        "text3":"Translation of text 3"
     }
 }
