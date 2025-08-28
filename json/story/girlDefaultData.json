@@ -25,41 +25,47 @@
         "age":34,
         "descriptionKey":"d3",
         "iconNumber":3,
-        "price":1
+        "price":500,
+        "currancy":"diamond"
     },
     "girl4":{
         "nameKey":"n4",
         "age":52,
         "descriptionKey":"d4",
         "iconNumber":4,
-        "price":1
+        "price":1000,
+        "currancy":"coin"
     },
     "girl5":{
         "nameKey":"n5",
         "age":19,
         "descriptionKey":"d5",
         "iconNumber":5,
-        "price":1
+        "price":170,
+        "currancy":"diamond"
     },
     "girl6":{
         "nameKey":"n6",
         "age":27,
         "descriptionKey":"d6",
         "iconNumber":5,
-        "price":1
+        "price":345,
+        "currancy":"coin"
     },
     "girl7":{
         "nameKey":"n7",
         "age":23,
         "descriptionKey":"d7",
         "iconNumber":7,
-        "price":1
+        "price":4564,
+        "currancy":"diamond"
     },
     "girl8":{
         "nameKey":"n8",
         "age":54,
         "descriptionKey":"d",
         "iconNumber":8,
-        "price":1
+        "price":100,
+        "currancy":"coin"
     }
 }

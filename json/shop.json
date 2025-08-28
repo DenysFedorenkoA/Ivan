@@ -6,55 +6,61 @@
                 {
                     "id":"",
                     "type":"a",
+                    "itemType":"coin",
                     "price":40,
                     "currency":"diamond",
                     "count":100,
-                    "image":2,
+                    "image":"coin",
                     "consumable":0
                 },
                 {
                     "id":"",
                     "type":"a",
+                    "itemType":"coin",
                     "price":20,
                     "currency":"diamond",
                     "count":500,
-                    "image":4,
+                    "image":"coin",
                     "consumable":0
                 },
                 {
                     "id":"",
                     "type":"b",
+                    "itemType":"coin",
                     "price":100,
                     "currency":"diamond",
                     "count":1000,
-                    "image":0,
+                    "image":"coin",
                     "consumable":0
                 },
                 {
                     "id":"",
                     "type":"a",
+                    "itemType":"coin",
                     "price":40,
                     "currency":"diamond",
                     "count":100,
-                    "image":7,
+                    "image":"coin",
                     "consumable":0
                 },
                 {
                     "id":"",
                     "type":"a",
+                    "itemType":"coin",
                     "price":20,
                     "currency":"diamond",
                     "count":500,
-                    "image":1,
+                    "image":"coin",
                     "consumable":0
                 },
                 {
                     "id":"",
                     "type":"b",
+                    "itemType":"coin",
                     "price":100,
                     "currency":"diamond",
                     "count":1000,
-                    "image":2,
+                    "image":"coin",
                     "consumable":0
                 }
             ]
@@ -65,55 +71,61 @@
                 {
                     "id":"",
                     "type":"c",
+                    "itemType":"coin",
                     "price":40,
                     "currency":"diamond",
                     "count":100,
-                    "image":3,
+                    "image":"coin",
                     "consumable":0
                 },
                 {
                     "id":"",
                     "type":"d",
+                    "itemType":"coin",
                     "price":20,
                     "currency":"diamond",
                     "count":500,
-                    "image":4,
+                    "image":"coin",
                     "consumable":0
                 },
                 {
                     "id":"",
                     "type":"c",
+                    "itemType":"coin",
                     "price":100,
                     "currency":"diamond",
                     "count":1000,
-                    "image":5,
+                    "image":"coin",
                     "consumable":0
                 },
                 {
                     "id":"",
                     "type":"c",
+                    "itemType":"coin",
                     "price":40,
                     "currency":"diamond",
                     "count":100,
-                    "image":0,
+                    "image":"coin",
                     "consumable":0
                 },
                 {
                     "id":"",
                     "type":"d",
+                    "itemType":"coin",
                     "price":20,
                     "currency":"diamond",
                     "count":500,
-                    "image":6,
+                    "image":"coin",
                     "consumable":0
                 },
                 {
                     "id":"",
                     "type":"c",
+                    "itemType":"coin",
                     "price":100,
                     "currency":"diamond",
                     "count":1000,
-                    "image":4,
+                    "image":"coin",
                     "consumable":0
                 }
             ]
@@ -122,12 +134,13 @@
             "quantityInColumn":1,
             "item":[
                 {
-                    "id":"",
+                    "id":"girl6",
                     "type":"f",
+                    "itemType":"girl",
                     "price":40,
                     "currency":"diamond",
                     "count":100,
-                    "image":2,
+                    "image":"girl6",
                     "consumable":0,
                     "text1":"text1",
                     "text2":"text2",
@@ -135,24 +148,26 @@
                     
                 },
                 {
-                    "id":"",
+                    "id":"girl7",
                     "type":"e",
+                    "itemType":"girl",
                     "price":20,
                     "currency":"diamond",
                     "count":500,
-                    "image":7,
+                    "image":"girl7",
                     "consumable":0,
                     "text1":"text1",
                     "text2":"text2",
                     "text3":"text3"
                 },
                 {
-                    "id":"",
+                    "id":"girl8",
                     "type":"f",
+                    "itemType":"girl",
                     "price":100,
                     "currency":"diamond",
                     "count":1000,
-                    "image":3,
+                    "image":"girl8",
                     "consumable":0,
                     "text1":"text1",
                     "text2":"text2",
@@ -161,10 +176,11 @@
                 {
                     "id":"",
                     "type":"e",
+                    "itemType":"girl",
                     "price":40,
                     "currency":"diamond",
                     "count":100,
-                    "image":2,
+                    "image":"girl5",
                     "consumable":0,
                     "text1":"text1",
                     "text2":"text2",
@@ -173,16 +189,18 @@
             ]
         }
     },
-    "premium":{        "block3":{
+    "premium":{        
+        "block1":{
             "quantityInColumn":1,
             "item":[
                 {
-                    "id":"",
+                    "id":"girl5",
                     "type":"f",
+                    "itemType":"girl",
                     "price":40,
                     "currency":"diamond",
                     "count":100,
-                    "image":2,
+                    "image":"girl5",
                     "consumable":0,
                     "text1":"text1",
                     "text2":"text2",
@@ -190,24 +208,26 @@
                     
                 },
                 {
-                    "id":"",
+                    "id":"girl6",
                     "type":"e",
+                    "itemType":"girl",
                     "price":20,
                     "currency":"diamond",
                     "count":500,
-                    "image":7,
+                    "image":"girl6",
                     "consumable":0,
                     "text1":"text1",
                     "text2":"text2",
                     "text3":"text3"
                 },
                 {
-                    "id":"",
+                    "id":"girl0",
                     "type":"e",
                     "price":40,
+                    "itemType":"girl",
                     "currency":"diamond",
                     "count":100,
-                    "image":2,
+                    "image":"girl0",
                     "consumable":0,
                     "text1":"text1",
                     "text2":"text2",
@@ -216,53 +236,58 @@
             ]
         }
     },
-    "currency":{
-            "block2":{
+    "coin":{
+            "block1":{
             "quantityInColumn":2,
             "item":[
                 {
                     "id":"",
                     "type":"c",
+                    "itemType":"coin",
                     "price":40,
-                    "currency":"coin",
+                    "currency":"diamond",
                     "count":100,
-                    "image":3,
+                    "image":"coin",
                     "consumable":0
                 },
                 {
                     "id":"",
                     "type":"c",
+                    "itemType":"coin",
                     "price":100,
-                    "currency":"coin",
+                    "currency":"diamond",
                     "count":1000,
-                    "image":5,
+                    "image":"coin",
                     "consumable":0
                 },
                 {
                     "id":"",
                     "type":"c",
+                    "itemType":"coin",
                     "price":40,
-                    "currency":"coin",
+                    "currency":"diamond",
                     "count":100,
-                    "image":0,
+                    "image":"coin",
                     "consumable":0
                 },
                 {
                     "id":"",
                     "type":"d",
+                    "itemType":"coin",
                     "price":20,
-                    "currency":"coin",
+                    "currency":"diamond",
                     "count":500,
-                    "image":6,
+                    "image":"coin",
                     "consumable":0
                 },
                 {
                     "id":"",
                     "type":"c",
+                    "itemType":"coin",
                     "price":100,
-                    "currency":"coin",
+                    "currency":"diamond",
                     "count":1000,
-                    "image":4,
+                    "image":"coin",
                     "consumable":0
                 }
             ]
@@ -273,48 +298,53 @@
             "quantityInColumn":3,
             "item":[
                 {
-                    "id":"",
+                    "id":"diamond123",
                     "type":"a",
+                    "itemType":"diamond",
                     "price":40,
-                    "currency":"diamond",
+                    "currency":"",
                     "count":100,
-                    "image":2,
+                    "image":"diamond",
                     "consumable":0
                 },
                 {
-                    "id":"",
+                    "id":"diamond",
                     "type":"a",
+                    "itemType":"diamond",
                     "price":20,
-                    "currency":"diamond",
+                    "currency":"",
                     "count":500,
-                    "image":4,
+                    "image":"diamond",
                     "consumable":0
                 },
                 {
-                    "id":"",
+                    "id":"diamond",
                     "type":"b",
+                    "itemType":"diamond",
                     "price":100,
-                    "currency":"diamond",
+                    "currency":"",
                     "count":1000,
-                    "image":0,
+                    "image":"diamonds",
                     "consumable":0
                 },
                 {
-                    "id":"",
+                    "id":"diamond",
                     "type":"a",
+                    "itemType":"diamond",
                     "price":40,
-                    "currency":"diamond",
+                    "currency":"",
                     "count":100,
-                    "image":7,
+                    "image":"diamonds",
                     "consumable":0
                 },
                 {
-                    "id":"",
+                    "id":"diamond",
                     "type":"a",
+                    "itemType":"diamond",
                     "price":20,
-                    "currency":"diamond",
+                    "currency":"",
                     "count":500,
-                    "image":1,
+                    "image":"diamonds",
                     "consumable":0
                 }
             ]

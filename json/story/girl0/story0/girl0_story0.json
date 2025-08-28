@@ -26,7 +26,7 @@
              "position":"right",
              "key":"image2"
           },
-                {
+         {
              "contentType":"text",
              "position":"left",
              "key":"key1",
@@ -37,6 +37,32 @@
              "position":"left",
              "key":"key1",
              "audio":"track1"
+          },
+         {
+             "contentType":"image",
+             "position":"right",
+             "key":"image3"
+          },
+         {
+             "contentType":"image",
+             "position":"right",
+             "key":"image4"
+          },
+         {
+             "contentType":"video",
+             "position":"right",
+             "key":"video1"
+          },
+         {
+             "contentType":"video",
+             "position":"right",
+             "key":"video2"
+          },
+         {
+             "contentType":"video",
+             "position":"right",
+             "key":"video3"
           }
+          
     ]
 }
