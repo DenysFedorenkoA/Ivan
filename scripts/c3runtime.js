@@ -1658,10 +1658,10 @@ self.C3_ExpressionFuncs = [
 			return () => n0.ExpObject(and("home.", v1.GetValue()));
 		},
 		() => "displayHomeData",
+		() => "homeGirlCount",
 		p => {
-			const n0 = p._GetNode(0);
-			const n1 = p._GetNode(1);
-			return () => n0.ExpObject(and(n1.ExpObject(), ".iconNumber"));
+			const v0 = p._GetNode(0).GetVar();
+			return () => and("+", (v0.GetValue() - 3));
 		},
 		() => "girlsMenu",
 		() => "switch All / Story / Galley",
@@ -2100,6 +2100,7 @@ self.C3_ExpressionFuncs = [
 			return () => (v0.GetValue() + ".score");
 		},
 		() => "data.data.girlsSaveData",
+		() => "shop",
 		() => "chooseShopPage",
 		() => "shopMenu",
 		() => "s_diamond",
@@ -2135,7 +2136,9 @@ self.C3_ExpressionFuncs = [
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const n1 = p._GetNode(1);
 			const n2 = p._GetNode(2);
-			return () => f0((n1.ExpObject() + ".item.itemType"), (n2.ExpObject() + ".item.id"));
+			const n3 = p._GetNode(3);
+			const n4 = p._GetNode(4);
+			return () => f0(n1.ExpObject((n2.ExpObject() + ".itemType")), n3.ExpObject((n4.ExpObject() + ".id")));
 		},
 		p => {
 			const n0 = p._GetNode(0);
@@ -2144,15 +2147,43 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => (n0.ExpObject() + ".item.count");
+			const n1 = p._GetNode(1);
+			return () => n0.ExpObject((n1.ExpObject() + ".count"));
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => (n0.ExpObject() + ".item.currency");
+			const n1 = p._GetNode(1);
+			return () => n0.ExpObject((n1.ExpObject() + ".currency"));
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => (n0.ExpObject() + ".item.price");
+			const n1 = p._GetNode(1);
+			return () => n0.ExpObject((n1.ExpObject() + ".price"));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => n0.ExpObject((n1.ExpObject() + ".itemType"));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => n0.ExpObject((n1.ExpObject() + ".id"));
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const n1 = p._GetNode(1);
+			return () => f0(n1.ExpObject(), 0, ".");
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const n1 = p._GetNode(1);
+			return () => f0(n1.ExpObject(), 1, ".");
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const n1 = p._GetNode(1);
+			return () => f0(n1.ExpObject(), 3, ".");
 		},
 		p => {
 			const v0 = p._GetNode(0).GetVar();
@@ -2181,11 +2212,6 @@ self.C3_ExpressionFuncs = [
 			return () => and(and(and(n0.ExpObject((n1.ExpObject() + ".price")), " [icon="), n2.ExpObject((n3.ExpObject() + ".currency"))), "]");
 		},
 		() => "count",
-		p => {
-			const n0 = p._GetNode(0);
-			const n1 = p._GetNode(1);
-			return () => n0.ExpObject((n1.ExpObject() + ".count"));
-		},
 		() => "text1",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -2225,12 +2251,11 @@ self.C3_ExpressionFuncs = [
 			return () => (((((v0.GetValue() % v1.GetValue())) === (0) ? 1 : 0)) ? (v2.GetValue()) : ((v3.GetValue() + 1)));
 		},
 		p => {
-			const n0 = p._GetNode(0);
-			const n1 = p._GetNode(1);
+			const v0 = p._GetNode(0).GetVar();
+			const v1 = p._GetNode(1).GetVar();
 			const v2 = p._GetNode(2).GetVar();
 			const v3 = p._GetNode(3).GetVar();
-			const v4 = p._GetNode(4).GetVar();
-			return () => (((Math.ceil((n0.ExpObject((n1.ExpObject() + ".item")) / v2.GetValue())) * v3.GetValue()) + (40 * v4.GetValue())) + 40);
+			return () => (((Math.ceil((v0.GetValue() / v1.GetValue())) * v2.GetValue()) + (40 * v3.GetValue())) + 40);
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -2249,6 +2274,60 @@ self.C3_ExpressionFuncs = [
 			const f8 = p._GetNode(8).GetBoundMethod();
 			const n9 = p._GetNode(9);
 			return () => C3.clamp(n0.ExpObject(), (f1(n2.ExpObject()) - (n3.ExpObject() - f4(n5.ExpObject()))), (f6(n7.ExpObject()) - f8(n9.ExpObject())));
+		},
+		() => "purchaseItem",
+		() => 10,
+		() => "startShopPurchase",
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			const n2 = p._GetNode(2);
+			return () => ((((n0.ExpInstVar() + ".") + n1.ExpInstVar()) + ".item.") + n2.ExpInstVar());
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => n0.ExpObject((v1.GetValue() + ".currency"));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => n0.ExpObject((v1.GetValue() + ".count"));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => n0.ExpObject((v1.GetValue() + ".itemType"));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => n0.ExpObject((v1.GetValue() + ".price"));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => n0.ExpObject((v1.GetValue() + ".id"));
+		},
+		() => "confirmShopPurchase",
+		() => "createShopConfirmPopUp",
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => n0.ExpObject((v1.GetValue() + ".image"));
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const v1 = p._GetNode(1).GetVar();
+			const v2 = p._GetNode(2).GetVar();
+			return () => f0(v1.GetValue(), (-v2.GetValue()), 1);
+		},
+		() => "coin",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const v1 = p._GetNode(1).GetVar();
+			const v2 = p._GetNode(2).GetVar();
+			return () => f0(v1.GetValue(), v2.GetValue(), 1);
 		},
 		() => "createWheel",
 		() => "Game",
@@ -2683,7 +2762,6 @@ self.C3_ExpressionFuncs = [
 		},
 		() => "gift",
 		() => "giftScore",
-		() => "shop",
 		() => "loadShopData",
 		() => "loadShop",
 		() => "purchase",
@@ -2698,19 +2776,7 @@ self.C3_ExpressionFuncs = [
 			return () => and(and(and(n0.ExpObject((v1.GetValue() + ".price")), " [icon="), n2.ExpObject((v3.GetValue() + ".currancy"))), "]");
 		},
 		() => "setPurchaseData",
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			const v1 = p._GetNode(1).GetVar();
-			const v2 = p._GetNode(2).GetVar();
-			return () => f0(v1.GetValue(), (-v2.GetValue()), 1);
-		},
 		() => "data.data.girlsEnable",
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			const v1 = p._GetNode(1).GetVar();
-			const v2 = p._GetNode(2).GetVar();
-			return () => f0(v1.GetValue(), v2.GetValue(), 1);
-		},
 		() => "confirmPurchase"
 ];
 
